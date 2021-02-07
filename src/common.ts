@@ -2,6 +2,8 @@ export type ZoomOptions = {
   apiKey: string;
   apiSecret: string;
   tokenExpiresIn?: string | number;
+  apiBaseUrl?: string;
+  apiVersion?: string;
 };
 export type ListResponse = {
   total_records: number;

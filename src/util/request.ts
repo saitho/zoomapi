@@ -45,8 +45,8 @@ export default function(zoomApiOpts: ZoomOptions) {
     const authToken = await getAuthToken(zoomApiOpts);
     const requestOpts = {
       method: opts.method,
-      hostname: BASE_URL,
-      path: API_VERSION + buildURL(opts.path, opts.params),
+      hostname: zoomApiOpts.apiBaseUrl ?? BASE_URL,
+      path: (zoomApiOpts.apiVersion ?? API_VERSION) + buildURL(opts.path, opts.params),
       headers: {
         'content-type': 'application/json',
         authorization: `Bearer ${authToken}`
